@@ -35,8 +35,16 @@ async function run() {
 
 
         app.get('/products', async (req, res) => {
+
+            const page = parseInt(req.query.page);
+            const size = parseInt(req.query.size);
+
+
             console.log('pagination', req.query);
-            const result = await productsCollection.find().toArray();
+            const result = await productsCollection.find()
+                .skip(page * size)
+                .limit(size)
+                .toArray();
             res.send(result);
         });
 
