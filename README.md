@@ -7,5 +7,4 @@ This project is electronic productsite named ElectroHub. Where will you see a lo
 
 ### How to run: 
 * npm i
-* setup firebase
 * run the project
